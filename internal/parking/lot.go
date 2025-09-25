@@ -44,7 +44,7 @@ func (pl *ParkingLot) Park(car *Car) (int, error) {
 func (pl *ParkingLot) LeaveByRegistration(registrationNumber string, hours int) (int, int, error) {
 	slotNumber, exists := pl.carToSlot[registrationNumber]
 	if !exists {
-		return 0, 0, fmt.Errorf("car %s not found", registrationNumber)
+		return 0, 0, fmt.Errorf("Registration number %s not found", registrationNumber)
 	}
 
 	// Calculate fee: $10 for first 2 hours, $10 for each additional hour
